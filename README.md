@@ -16,7 +16,7 @@ Coding standards to come...
     - don't use "end div" comments
     - comments should be implemented with liquid syntax
     - *Good Example*
-```
+    - ```
 {% comment %}<!-- My Comments Here --> {% endcomment %}
 ```
 
