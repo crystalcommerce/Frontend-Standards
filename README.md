@@ -11,12 +11,12 @@ comments should be implemented with liquid syntax
 keep DOM tree size to a minimum
 the use of ID’s should only be for javascript
 use the liquid syntax for including images
-<img src=“{{ my-img.jpg | assets_url }}” alt={{ store.name }}>
+`<img src=“{{ my-img.jpg | assets_url }}” alt={{ store.name }}>`
 all javascript and css should be included via config.yml
 
 Naming Conventions:
 use object oriented naming conventions
-hyphenated naming style, i.e. “<div class="my-div”>"
+hyphenated naming style, i.e. `<div class="my-div”>`
 use general-specific names, examples:
 header-main
 btn-twitter
