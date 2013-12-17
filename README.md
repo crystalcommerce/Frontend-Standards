@@ -1,5 +1,7 @@
 # Coding Standards
 
+`note: Ross- I just added in what our word doc had and we can just format it when we have time`
+
 HTML Standards 
 
 General:
