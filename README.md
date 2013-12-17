@@ -15,8 +15,9 @@ Coding standards to come...
     - Limit the use of comments for production
     - don't use "end div" comments
     - comments should be implemented with liquid syntax
-    - *Good Example*
-    - ```
+
+*Good Example*
+```
 {% comment %}<!-- My Comments Here --> {% endcomment %}
 ```
 
