@@ -13,7 +13,7 @@ General:
 * the use of ID’s should only be for javascript
 * use the liquid syntax for including images
 
-``` html
+```
 <img src=“{{ my-img.jpg | assets_url }}” alt={{ store.name }}>
 ```
 
