@@ -14,7 +14,7 @@
     - Use liquid comments instead of HTML comments when possible
 
 *Good Examples*
-```
+```liquid
 {% comment %} My comment here {% endcomment %}
 
 {% comment %}
@@ -27,7 +27,7 @@
 ```
 
 *Bad Example*
-```
+```liquid
 <!-- My Comments Here -->
 ```
 
