@@ -23,23 +23,27 @@ Coding standards to come...
 ```
 <!-- My Comments Here -->
 ```
+## <a name='arrays'>Arrays</a>
 
-
-## <a name='types'>Types</a>
-
-  - **Primitives**: When you access a primitive type you work directly on its value
-
-    + `string`
-    + `number`
-    + `boolean`
-    + `null`
-    + `undefined`
+  - Use the literal syntax for array creation
 
     ```javascript
-    var foo = 1,
-        bar = foo;
+    // bad
+    var items = new Array();
 
-    bar = 9;
+    // good
+    var items = [];
+    ```
 
-    console.log(foo, bar); // => 1, 9
+  - If you don't know array length use Array#push.
+
+    ```javascript
+    var someStack = [];
+
+
+    // bad
+    someStack[someStack.length] = 'abracadabra';
+
+    // good
+    someStack.push('abracadabra');
     ```
