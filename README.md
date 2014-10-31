@@ -13,23 +13,23 @@
     - comments should be implemented with liquid syntax
     - Use liquid comments instead of HTML comments when possible
 
-*Good Examples*
-```liquid
-{% comment %} My comment here {% endcomment %}
-
-{% comment %}
-
-    This is a multiline comment that can
-    be used to explain in more detail
-
-{% endcomment %}
-
-```
-
-*Bad Example*
-```liquid
-<!-- My Comments Here -->
-```
+    *Good Examples*
+    ```liquid
+    {% comment %} My comment here {% endcomment %}
+    
+    {% comment %}
+    
+        This is a multiline comment that can
+        be used to explain in more detail
+    
+    {% endcomment %}
+    
+    ```
+    
+    *Bad Example*
+    ```liquid
+    <!-- My Comments Here -->
+    ```
 
 ---
 
