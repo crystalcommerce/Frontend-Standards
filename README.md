@@ -1,22 +1,29 @@
 # Coding Standards
 
-Coding standards to come...
-
 ### <a name='types'>HTML & Liquid</a>
 
 - **HTML 5 Doctype**: Use the HTML 5 doctype at the top of your website
 
 `<!DOCTYPE html>`
 
-- **HTML5 Markup**: Use HTML5 markup syntax when needed
+- **HTML5 Markup**: Use HTML5 markup syntax
 - **Comments**
-    - Limit the use of comments for production
+    - Limit the use of rendered comments for production (js & css comments get removed/ minified)
     - don't use "end div" comments
     - comments should be implemented with liquid syntax
+    - Use liquid comments instead of HTML comments when possible
 
-*Good Example*
+*Good Examples*
 ```
-{% comment %}<!-- My Comments Here --> {% endcomment %}
+{% comment %} My comment here {% endcomment %}
+
+{% comment %}
+
+    This is a multiline comment that can
+    be used to explain in more detail
+
+{% endcomment %}
+
 ```
 
 *Bad Example*
@@ -24,7 +31,11 @@ Coding standards to come...
 <!-- My Comments Here -->
 ```
 
+---
 
+---
+
+---
 
 
 # Example from AirB n B formatting
