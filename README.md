@@ -4,7 +4,7 @@
 
 - **HTML 5 Doctype**: Use the HTML 5 doctype at the top of your website
 
-`<!DOCTYPE html>`
+    `<!DOCTYPE html>`
 
 - **HTML5 Markup**: Use HTML5 markup syntax
 - **Comments**
