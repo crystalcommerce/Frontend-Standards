@@ -1,12 +1,23 @@
 # Coding Standards
 
-### <a name='types'>HTML & Liquid</a>
+### <a name='html'>HTML & Liquid</a>
 
 - **HTML 5 Doctype**: Use the HTML 5 doctype at the top of your website
 
     `<!DOCTYPE html>`
 
 - **HTML5 Markup**: Use HTML5 markup syntax
+
+    *Good*
+    ```html
+    <header><!-- my header --></header>
+    ```
+    
+    *Bad*
+    ```html
+    <div class="header"><!-- old way to do headers --></div>
+    ```
+
 - **Comments**
     - Limit the use of rendered comments for production (js & css comments get removed/ minified)
     - don't use "end div" comments
@@ -30,6 +41,10 @@
     ```liquid
     <!-- My Comments Here -->
     ```
+
+### <a name='moreresources'>More Resources</a>
+
+- [HTML5 Doctor](http://html5doctor.com/)
 
 ---
 
