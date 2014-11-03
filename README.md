@@ -1,12 +1,17 @@
-# Coding Standards & Guidelines
+# Coding Standards
 
 ## Table of Contents
 
+  1. [General](#general)
   1. [HTML & Liquid](#html)
   1. [CSS](#css)
   1. [Javascript](#arrays)
   1. [Refrences](#refrences)
   1. [More Resources](#moreresources)
+  
+### <a name='general'>General</a>
+
+- Update [humans.txt](https://github.com/crystalcommerce/Heisenberg/blob/master/humans.txt) to include the designers, dev's and clients name of the project
 
 ### <a name='html'>HTML & Liquid</a>
 
@@ -99,16 +104,12 @@
     {% comment %} This minifies the CSS by setting it to false {% endcomment %}
     {{ "head" | css_minify_tag: false }}
     ```
-    
-    
-
 
 ### <a name='css'>CSS</a>
 
 *Work in progress*
 
 General:
-- the developers name and crystal commerce should be noted at top of stylesheet
 - use custom.css to write all of your styles
 - use devices-custom.css for your responsive styles
 - use normalize.css if reset is not present
