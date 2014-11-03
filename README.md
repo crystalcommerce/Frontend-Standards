@@ -109,8 +109,22 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
 
 ### <a name='css'>CSS</a>
 
+- CSS3 should be used over images, when applicable *(example, rounded corners, gradiants etc)*
 - **Custom CSS**: use `custom.global.css` for all your custom CSS
 - **Responsive CSS**: use `custom.devices.css` for your responsive CSS
+- **IDs and Class names**: the use of IDs is not allowed in CSS and should only be used for Javascript
+
+    *Bad*
+    ```css
+    #my-div {background: blue;}
+    ```
+
+    *Good*
+    ```css
+    .my-div {background: blue;}
+    ```
+
+
 - **CSS Hacks**: any CSS hacks should be written in `custom.shame.css` and should be well commented on why you are using the hack
 
     *Bad*
@@ -150,11 +164,6 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
 
 General:
 - use normalize.css if reset is not present
-- specificity should not exceed 3 levels deep, example:
-- .container .child .sub-child {…}
-- use sparingly, only when necessary
-- CSS3 should be used over images, when applicable
-- the use of IDs is not allowed in stylesheets
 
 Presentation Considerations:
 - do not nest styles with indentation
