@@ -1,4 +1,4 @@
-# Coding Standards
+# Coding Standards & Guidelines
 
 ## Table of Contents
 
