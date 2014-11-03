@@ -1,6 +1,6 @@
 # Coding Standards
 
-## <a name='TOC'>Table of Contents</a>
+## Table of Contents
 
   1. [HTML & Liquid](#html)
   1. [CSS](#css)
