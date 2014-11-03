@@ -1,4 +1,6 @@
-# Coding Standards
+# Coding Standards & Guidelines
+
+These standards and guidelines are mainly for CrystalCommerce front-end client projects and frameworks.
 
 ## Table of Contents
 
@@ -79,7 +81,7 @@
     ```
     
 - **Asset URL**: Use the asset_url for including images and other assets
-    - `asset_rul` returns asset path relative to the current theme’s asset dir on the cdn
+    - `asset_url` returns asset path relative to the current theme’s asset dir on the cdn
 
     *Bad*
     ```liquid
@@ -107,14 +109,31 @@
 
 ### <a name='css'>CSS</a>
 
+- **Custom CSS**: use `custom.global.css` for all your custom CSS
+- **Responsive CSS*: use `custom.devices.css` for your responsive CSS
+- **CSS Hacks*: any CSS hacks should be written in `custom.shame.css` and should be well commented on why you are using the hack
+    
+    *Bad*
+    ```css
+    // custom.global.css
+
+    #page-container {background: #000 !important;}
+    ```
+
+    *Good*
+    ```css
+    // custom.shame.css
+
+    /*  Page container gets overwritten by Javascript
+        so I need to overwrite it with !important   */
+    #page-container { background: #000 !important;}
+    ```
+- 
+
 *Work in progress*
 
 General:
-- use custom.css to write all of your styles
-- use devices-custom.css for your responsive styles
 - use normalize.css if reset is not present
-- any css hacks should be written in shame.css
-- shame.css should be well commented to explain the hack
 - specificity should not exceed 3 levels deep, example:
 - .container .child .sub-child {…}
 - use sparingly, only when necessary
