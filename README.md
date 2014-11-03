@@ -10,7 +10,7 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
   1. [Javascript](#arrays)
   1. [Refrences](#refrences)
   1. [More Resources](#moreresources)
-  
+
 ### <a name='general'>General</a>
 
 - Edit [humans.txt](https://github.com/crystalcommerce/Heisenberg/blob/master/humans.txt) to include the designers, dev's and clients name of the project
@@ -79,7 +79,7 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
         <p>This is better</p>
     </div>
     ```
-    
+
 - **Asset URL**: Use the asset_url for including images and other assets
     - `asset_url` returns asset path relative to the current theme’s asset dir on the cdn
 
@@ -87,7 +87,7 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     ```liquid
     <img src="files/assets/myimage.jpg">
     ```
-    
+
     *Good*
     ```liquid
     <img src="{{ "myimage.jpg" | asset_url }}">
@@ -97,7 +97,7 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     ```liquid
     <img src="http://cdn2.crystalcommerce.com/themes/clients/MyClient/assets/myimage.jpg">
     ```
-    
+
 - **Config.yml**: Use the `config.yml` to include CSS & JS
     - The config.yml will minify concatenate JS & CSS into fewer files.
     - [More info at docs.cc.com](http://docs.crystalcommerce.com/features/theme_config.html)
@@ -112,7 +112,7 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
 - **Custom CSS**: use `custom.global.css` for all your custom CSS
 - **Responsive CSS**: use `custom.devices.css` for your responsive CSS
 - **CSS Hacks**: any CSS hacks should be written in `custom.shame.css` and should be well commented on why you are using the hack
-    
+
     *Bad*
     ```css
     /* custom.global.css */
@@ -128,7 +128,23 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
         so I need to overwrite it with !important   */
     #page-container { background: #000 !important;}
     ```
-- 
+
+- **Selectors**: CSS selectors should not exceed 3 levels deep
+    - If a selector needs to exceed 3 levels, use sparingly
+
+    *Bad*
+    ```css
+    .content .product-container .product .inner .name {
+        font-weight: bold;
+    }
+    ```
+
+    *Good*
+    ```css
+    .product-container .product .name {
+        font-weight: bold;
+    }
+    ```
 
 *Work in progress*
 
@@ -138,13 +154,13 @@ General:
 - .container .child .sub-child {…}
 - use sparingly, only when necessary
 - CSS3 should be used over images, when applicable
-- the use of IDs is not allowed in stylesheets 
+- the use of IDs is not allowed in stylesheets
 
 Presentation Considerations:
 - do not nest styles with indentation
 - group browser prefixes, separate with line breaks
 - w3c css3 spec should be listed last
-- css properties should be alphabetized 
+- css properties should be alphabetized
 - sections of css should labeled with a comment head
 - comment heads should be prefixed with an underscore i.e:
 - "_HEADER MAIN STYLES"
