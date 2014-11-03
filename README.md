@@ -110,19 +110,19 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
 ### <a name='css'>CSS</a>
 
 - **Custom CSS**: use `custom.global.css` for all your custom CSS
-- **Responsive CSS*: use `custom.devices.css` for your responsive CSS
-- **CSS Hacks*: any CSS hacks should be written in `custom.shame.css` and should be well commented on why you are using the hack
+- **Responsive CSS**: use `custom.devices.css` for your responsive CSS
+- **CSS Hacks**: any CSS hacks should be written in `custom.shame.css` and should be well commented on why you are using the hack
     
     *Bad*
     ```css
-    // custom.global.css
+    /* custom.global.css */
 
     #page-container {background: #000 !important;}
     ```
 
     *Good*
     ```css
-    // custom.shame.css
+    /* custom.shame.css */
 
     /*  Page container gets overwritten by Javascript
         so I need to overwrite it with !important   */
