@@ -11,7 +11,7 @@
   
 ### <a name='general'>General</a>
 
-- Update [humans.txt](https://github.com/crystalcommerce/Heisenberg/blob/master/humans.txt) to include the designers, dev's and clients name of the project
+- Use [humans.txt](https://github.com/crystalcommerce/Heisenberg/blob/master/humans.txt) to include the designers, dev's and clients name of the project
 
 ### <a name='html'>HTML & Liquid</a>
 
