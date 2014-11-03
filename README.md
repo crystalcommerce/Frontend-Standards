@@ -105,12 +105,44 @@
 
 ### <a name='css'>CSS</a>
 
-- the use of ID’s should only be for javascript and should not be in CSS
+*Work in progress*
+
+General:
+- the developers name and crystal commerce should be noted at top of stylesheet
+- use custom.css to write all of your styles
+- use devices-custom.css for your responsive styles
+- use normalize.css if reset is not present
+- any css hacks should be written in shame.css
+- shame.css should be well commented to explain the hack
+- specificity should not exceed 3 levels deep, example:
+- .container .child .sub-child {…}
+- use sparingly, only when necessary
+- CSS3 should be used over images, when applicable
+- the use of IDs is not allowed in stylesheets 
+
+Presentation Considerations:
+- do not nest styles with indentation
+- group browser prefixes, separate with line breaks
+- w3c css3 spec should be listed last
+- css properties should be alphabetized 
+- sections of css should labeled with a comment head
+- comment heads should be prefixed with an underscore i.e:
+- "_HEADER MAIN STYLES"
+- include table of contents (list of comment heads)
+- see example...
+
+Images:
+- image sprites should be used when CSS3 styles are not appropriate
+- use as few images as possible
+- image sprites should be called only once
+- this should be near the top of your stylesheet
+- you can use a .sprite class to make this easier
+- use sprites for hover effects at all costs
 
 
 ### <a name='javascript'>Javascript</a>
 
-*Note: Lets keep a list of refrences for the above parts down here*
+*Work in progress*
 
 
 ### <a name='refrences'>Refrences</a>
