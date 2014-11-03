@@ -1,5 +1,13 @@
 # Coding Standards
 
+## <a name='TOC'>Table of Contents</a>
+
+  1. [HTML & Liquid](#html)
+  1. [CSS](#css)
+  1. [Javascript](#arrays)
+  1. [Refrences](#refrences)
+  1. [More Resources](#moreresources)
+
 ### <a name='html'>HTML & Liquid</a>
 
 - **HTML 5 Doctype**: Use the HTML 5 doctype at the top of your website
@@ -84,63 +92,36 @@
     ```
     
 - **Config.yml**: Use the `config.yml` to include CSS & JS
-    - The `config.yml` will minify concatenate JS & CSS into fewer files.
+    - The config.yml will minify concatenate JS & CSS into fewer files.
     - [More info at docs.cc.com](http://docs.crystalcommerce.com/features/theme_config.html)
 
     ```liquid
     {% comment %} This minifies the CSS by setting it to false {% endcomment %}
     {{ "head" | css_minify_tag: false }}
     ```
+    
+    
+
 
 ### <a name='css'>CSS</a>
 
 - the use of ID’s should only be for javascript and should not be in CSS
--
 
+
+### <a name='javascript'>Javascript</a>
+
+*Note: Lets keep a list of refrences for the above parts down here*
+
+
+### <a name='refrences'>Refrences</a>
+
+*Note: Lets keep a list of refrences for the above parts down here*
 
 
 ### <a name='moreresources'>More Resources</a>
 
-**Refrence**
+More tools, sites, and articles.
+
 - [HTML5 Doctor](http://html5doctor.com/)
-
-
-**Tools**
 - [Siteleaf Liquid Syntax (Sublime Text 2)](https://sublime.wbond.net/packages/Siteleaf%20Liquid%20Syntax)
 -
-
-
-
-
----
-
----
-
----
-
-
-# Example from AirB n B formatting
-## <a name='arrays'>Arrays</a>
-
-  - Use the literal syntax for array creation
-
-    ```javascript
-    // bad
-    var items = new Array();
-
-    // good
-    var items = [];
-    ```
-
-  - If you don't know array length use Array#push.
-
-    ```javascript
-    var someStack = [];
-
-
-    // bad
-    someStack[someStack.length] = 'abracadabra';
-
-    // good
-    someStack.push('abracadabra');
-    ```
