@@ -150,10 +150,6 @@ Images:
 *Note: Lets keep a list of refrences for the above parts down here*
 
 
-### <a name='moreresources'>More Resources</a>
+### <a name='moreresources'>External Resources</a>
 
-More tools, sites, and articles.
-
-- [HTML5 Doctor](http://html5doctor.com/)
-- [Siteleaf Liquid Syntax (Sublime Text 2)](https://sublime.wbond.net/packages/Siteleaf%20Liquid%20Syntax)
--
+- [View more resources](https://github.com/crystalcommerce/Heisenberg/wiki/External-Resources)
