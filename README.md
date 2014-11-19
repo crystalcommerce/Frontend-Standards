@@ -5,6 +5,7 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
 ## Table of Contents
 
   1. [General](#general)
+  1. [Perfomanace](#perf)
   1. [HTML & Liquid](#html)
   1. [CSS](#css)
   1. [Javascript](#arrays)
@@ -14,6 +15,11 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
 ### <a name='general'>General</a>
 
 - Edit [humans.txt](https://github.com/crystalcommerce/Heisenberg/blob/master/humans.txt) to include the designers, dev's and clients name of the project
+
+### <a name='perf'>Perfomance</a>
+
+- **Google Fonts**: ......
+- ......
 
 ### <a name='html'>HTML & Liquid</a>
 
