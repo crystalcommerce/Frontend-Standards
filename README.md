@@ -14,6 +14,22 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
 
 ### <a name='general'>General</a>
 
+- Use spaces when coding and not tab characters. Use 4 spaces for a tab.
+
+    *Good*
+    ```html
+    <div class="container">
+        <p>This is my text</p>
+    </div>
+    ```
+
+    *Bad*
+    ```html
+    <div class="container">
+      <p>This is my text</p>
+    </div>
+    ```
+
 - Edit [humans.txt](https://github.com/crystalcommerce/Heisenberg/blob/master/humans.txt) to include the designers, dev's and clients name of the project
 
 ### <a name='perf'>Perfomance</a>
