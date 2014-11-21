@@ -5,7 +5,7 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
 ## Table of Contents
 
   1. [General](#general)
-  1. [Perfomanace](#perf)
+  1. [Performanace](#perf)
   1. [HTML & Liquid](#html)
   1. [CSS](#css)
   1. [Javascript](#arrays)
@@ -14,7 +14,7 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
 
 ### <a name='general'>General</a>
 
-- Use spaces when coding and not tab characters. Use 4 spaces for a tab.
+- **Spaces not Tabs**: Use spaces when coding and not tab characters. Use 4 spaces for a tab.
 
     *Good*
     ```html
@@ -34,7 +34,21 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
 
 ### <a name='perf'>Perfomance</a>
 
-- **Google Fonts**: ......
+- **HTTP Requests***: Limit the amount of requests to the page by minifiying CSS & JS.
+- **Google Fonts**: You can include multiple Google Web Fonts with one `<link>` tag. This limits the amount of requests to their server to 1.
+
+    *Good*
+    ```html
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans|Roboto' rel='stylesheet' type='text/css'>
+    ```
+
+    *Bad*
+    ```html
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    ```
+
+
 - ......
 
 ### <a name='html'>HTML & Liquid</a>
