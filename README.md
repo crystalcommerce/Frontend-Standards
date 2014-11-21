@@ -34,7 +34,7 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
 
 ### <a name='perf'>Perfomance</a>
 
-- **HTTP Requests***: Limit the amount of requests to the page by minifiying CSS & JS.
+- **HTTP Requests**: Limit the amount of requests to the page by minifiying CSS & JS. You can have the server minify files with the use of config.yml
 - **Google Fonts**: You can include multiple Google Web Fonts with one `<link>` tag. This limits the amount of requests to their server to 1.
 
     *Good*
