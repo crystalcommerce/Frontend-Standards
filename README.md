@@ -36,7 +36,7 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
 
 - **HTTP Requests**: Minimize the amount of requests to the page by minifiying CSS & JS. You can have the server minify files with the use of config.yml
 - **non-blocking Javascript**: Make sure javascript is loaded at the bottom of the page and the page markup is rendered first. Javascript can block the page load causing a longer loading times.
-- **Google Fonts**: You can include multiple Google Web Fonts with one `<link>` tag. This limits the amount of requests to their server to 1. <sup>(1)[https://developers.google.com/fonts/docs/getting_started#Syntax]</sup>
+- **Google Fonts**: You can include multiple Google Web Fonts with one `<link>` tag. This limits the amount of requests to their server to 1. <sup>[Refrence](https://developers.google.com/fonts/docs/getting_started#Syntax)</sup>
 
     *Good*
     ```html
