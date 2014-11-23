@@ -5,10 +5,11 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
 ## Table of Contents
 
   1. [General](#general)
-  1. [Performanace](#perf)
   1. [HTML & Liquid](#html)
   1. [CSS](#css)
   1. [Javascript](#arrays)
+  1. [Performanace](#perf)
+  1. [SEO & Data](#seo)
   1. [Refrences](#refrences)
   1. [More Resources](#moreresources)
 
@@ -32,31 +33,20 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
 
 - Edit [humans.txt](https://github.com/crystalcommerce/Heisenberg/blob/master/humans.txt) to include the designers, dev's and clients name of the project
 
-### <a name='perf'>Perfomance</a>
-
-- **HTTP Requests**: Minimize the amount of requests to the page by minifiying CSS & JS. You can have the server minify files with the use of config.yml
-- **non-blocking Javascript**: Make sure javascript is loaded at the bottom of the page and the page markup is rendered first. Javascript can block the page load causing a longer loading times.
-- **Google Fonts**: You can include multiple Google Web Fonts with one `<link>` tag. This limits the amount of requests to their server to 1. <sup>[Refrence](https://developers.google.com/fonts/docs/getting_started#Syntax)</sup>
-
-    *Good*
-    ```html
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans|Roboto' rel='stylesheet' type='text/css'>
-    ```
-
-    *Bad*
-    ```html
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-    ```
-
-
-- ......
-
 ### <a name='html'>HTML & Liquid</a>
 
 - **HTML 5 Doctype**: Use the HTML 5 doctype at the top of your website
 
-    `<!DOCTYPE html>`
+    *Good*
+    ```html
+    <!DOCTYPE html>
+    ```
+
+    *Bad*
+    ```html
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    ```
 
 - **HTML5 Markup**: Use HTML5 markup syntax
 
@@ -69,6 +59,8 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     ```html
     <div class="header"><!-- old way to do headers --></div>
     ```
+
+- **Tables**: Tables should NOT be used for layout design. Use CSS.
 
 - **Comments**
     - Limit the use of rendered comments for production (js & css comments get removed/ minified)
@@ -143,6 +135,8 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     {% comment %} This minifies the CSS by setting it to false {% endcomment %}
     {{ "head" | css_minify_tag: false }}
     ```
+
+- Use <label> fields to label each form field. The for attribute should associate itself with the input field, so users can click the labels and obtain focus.
 
 ### <a name='css'>CSS</a>
 
@@ -226,6 +220,50 @@ Images:
 
 *Work in progress*
 
+
+### <a name='perf'>Perfomance</a>
+
+- **HTTP Requests**: Minimize the amount of requests to the page by minifiying CSS & JS. You can have the server minify files with the use of config.yml
+- **non-blocking Javascript**: Make sure javascript is loaded at the bottom of the page and the page markup is rendered first. Javascript can block the page load causing a longer loading times.
+- **Google Fonts**: You can include multiple Google Web Fonts with one `<link>` tag. This limits the amount of requests to their server to 1. <sup>[Refrence](https://developers.google.com/fonts/docs/getting_started#Syntax)</sup>
+
+    *Good*
+    ```html
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans|Roboto' rel='stylesheet' type='text/css'>
+    ```
+
+    *Bad*
+    ```html
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    ```
+
+
+- ......
+
+
+### <a name='seo'>SEO & Data</a>
+
+- **Schema Data**: Use schema data when applicable.
+
+    *Good*
+    ```html
+
+    ```
+
+    *Bad*
+    ```html
+    <div class="product">
+
+        <h5 class="name">My Product</h5>
+        <span class="price">$5.99</span>
+
+        <a href="/product">
+            <img src="product.jpg" alt="My Product" />
+        </a>
+
+    </div>
+    ```
 
 ### <a name='refrences'>Refrences</a>
 
