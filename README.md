@@ -10,7 +10,6 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
   1. [Javascript](#arrays)
   1. [Performanace](#perf)
   1. [SEO & Data](#seo)
-  1. [Refrences](#refrences)
   1. [More Resources](#moreresources)
 
 ### <a name='general'>General</a>
@@ -143,6 +142,23 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
 - CSS3 should be used over images, when applicable *(example, rounded corners, gradiants etc)*
 - **Custom CSS**: use `custom.global.css` for all your custom CSS
 - **Responsive CSS**: use `custom.devices.css` for your responsive CSS
+- All CSS rules should have a space after the selector colon and a trailing semi-colon.
+- 0 value requires no units
+
+    *Bad*
+    ```css
+    .my-div {
+        margin: 0px;
+    }
+    ```
+
+    *Good*
+    ```css
+    .my-div {
+        margin: 0;
+    }
+    ```
+
 - **IDs and Class names**: the use of IDs is not allowed in CSS and should only be used for Javascript
 
     *Bad*
@@ -279,12 +295,7 @@ Images:
     </div>
     ```
 
-### <a name='refrences'>Refrences</a>
-
-*Note: Lets keep a list of refrences for the above parts down here*
-- https://developers.google.com/fonts/docs/getting_started#Syntax
-
-
 ### <a name='moreresources'>External Resources</a>
 
 - [View more resources](https://github.com/crystalcommerce/Heisenberg/wiki/External-Resources)
+- [TMW Front-end guidelines](https://github.com/tmwagency/TMW-frontend-guidelines/blob/master/Front-End%20development%20guidelines.mdown)
