@@ -244,11 +244,25 @@ Images:
 
 ### <a name='seo'>SEO & Data</a>
 
-- **Schema Data**: Use schema data when applicable.
+- **Schema Data**: Use schema data when applicable. You can test the data with [Google's Structured Data Testing Tool](http://www.google.com/webmasters/tools/richsnippets). More info at [Schema.org](http://schema.org)
 
     *Good*
     ```html
+    <div class="product" itemscope itemtype="http://schema.org/Product">
 
+        <h5 class="name" itemprop="name">My Product</h5>
+
+        <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+
+            <span class="price" itemprop="price" content="5.99">$5.99</span>
+
+        </div>
+
+        <a href="/product">
+            <img src="product.jpg" alt="My Product" />
+        </a>
+
+    </div>
     ```
 
     *Bad*
