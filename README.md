@@ -261,6 +261,8 @@ Images:
 ### <a name='seo'>SEO & Data</a>
 
 - **Schema Data**: Use schema data when applicable. You can test the data with [Google's Structured Data Testing Tool](http://www.google.com/webmasters/tools/richsnippets). More info at [Schema.org](http://schema.org)
+  - [Schema Product Data](http://schema.org/Product)
+  - [Schema Organization Data](http://schema.org/Organization)
 
     *Good*
     ```html
