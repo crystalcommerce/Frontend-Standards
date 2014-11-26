@@ -29,6 +29,10 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
       <p>This is my text</p>
     </div>
     ```
+    
+  In Sublime Text you can see tabs vs spaces if you highlight the code area
+  
+  ![Imgur](http://i.imgur.com/w78CPQb.png)
 
 - Edit [humans.txt](https://github.com/crystalcommerce/Heisenberg/blob/master/humans.txt) to include the designers, dev's and clients name of the project
 
