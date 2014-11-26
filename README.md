@@ -230,7 +230,7 @@ Presentation Considerations:
 Images:
 - image sprites should be used when CSS3 styles are not appropriate
 - use as few images as possible
-- image sprites should be called only once
+- image sprites should be called only once - http://spritepad.wearekiss.com/
 - this should be near the top of your stylesheet
 - you can use a .sprite class to make this easier
 - use sprites for hover effects at all costs
