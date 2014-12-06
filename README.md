@@ -144,6 +144,7 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     ```html
     <label for="name">Your Name</label>
     <input id="name" type="text" placeholder="Enter your name">
+    ```
 
 - **Liquid Logic**: Avoid long liquid statements that have lots of operators. Simplify your statements using available tools such as `{% assign %}`, `{% for %}`, `{% unless %}`, and `{% != %}'`
     *Bad*
