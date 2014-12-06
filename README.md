@@ -1,3 +1,5 @@
+*note:* we need to copy some of the info from [here](https://gist.github.com/rdallaire/1de6696b16bb1a6fbdb6) and format it in this standards guide this is what we started in the past and some of it is already in this doc.
+
 # Coding Standards & Guidelines
 
 These standards and guidelines are mainly for CrystalCommerce front-end client projects and frameworks.
