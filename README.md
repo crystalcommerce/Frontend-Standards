@@ -72,7 +72,7 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     - Use liquid comments instead of HTML comments when possible
 
     *Good*
-    ```liquid
+    ```html
     {% comment %} This comment does NOT show on the rendered source {% endcomment %}
 
     {% comment %}
@@ -116,17 +116,17 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     - `asset_url` returns asset path relative to the current theme’s asset dir on the cdn
 
     *Bad*
-    ```liquid
+    ```html
     <img src="files/assets/myimage.jpg">
     ```
 
     *Good*
-    ```liquid
+    ```html
     <img src="{{ "myimage.jpg" | asset_url }}">
     ```
 
     *Output*
-    ```liquid
+    ```html
     <img src="http://cdn2.crystalcommerce.com/themes/clients/MyClient/assets/myimage.jpg">
     ```
 
@@ -134,12 +134,31 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     - The config.yml will minify concatenate JS & CSS into fewer files.
     - [More info at docs.cc.com](http://docs.crystalcommerce.com/features/theme_config.html)
 
-    ```liquid
+    ```html
     {% comment %} This minifies the CSS by setting it to false {% endcomment %}
     {{ "head" | css_minify_tag: false }}
     ```
 
-- Use <label> fields to label each form field. The for attribute should associate itself with the input field, so users can click the labels and obtain focus.
+- **Form Fields**: Use `<label>` fields to label each form field. The for attribute should associate itself with the input field, so users can click the labels and obtain focus. Using the placeholder value is not adequate because it is often skipped by screen-readers
+
+    ```html
+    <label for="name">Your Name</label>
+    <input id="name" type="text" placeholder="Enter your name">
+
+- **Liquid Logic**: Avoid long liquid statements that have lots of operators. Simplify your statements using available tools such as `{% assign %}`, `{% for %}`, `{% unless %}`, and `{% != %}'`
+    *Bad*
+    ```html
+    {% if site.pagename == 'home' or site.pagename == 'buylist' or site.pagename == 'about_us' or site.pagename == 'multi_search' or site.pagename == 'category_browse'  or [...] %} 
+        <!-- show this thing -->
+    {% endif %}
+    ```
+
+    *Good*
+    ```html
+    {% if site.pagename != 'advanced_search' %}
+        <!-- show this thing -->
+    {% endif %}
+    ```
 
 ### <a name='css'>CSS</a>
 
