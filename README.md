@@ -146,7 +146,8 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     <input id="name" type="text" placeholder="Enter your name">
     ```
 
-- **Liquid Logic**: Avoid long liquid statements that have lots of operators. Simplify your statements using available tools such as `{% assign %}`, `{% for %}`, `{% unless %}`, and `{% != %}'`
+- **Liquid Logic**: Avoid long liquid statements that have lots of operators. Simplify your statements using available tools such as `{% assign %}`, `{% for %}`, `{% unless %}`, and `{% != %}'`.
+
     *Bad*
     ```html
     {% if site.pagename == 'home' or site.pagename == 'buylist' or site.pagename == 'about_us' or site.pagename == 'multi_search' or site.pagename == 'category_browse'  or [...] %} 
