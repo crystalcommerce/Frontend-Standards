@@ -36,7 +36,7 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
   
   ![Imgur](http://i.imgur.com/w78CPQb.png)
 
-- Edit [humans.txt](https://github.com/crystalcommerce/Heisenberg/blob/master/humans.txt) to include the designers, dev's and clients name of the project
+- **Attribution** Edit [humans.txt](https://github.com/crystalcommerce/Heisenberg/blob/master/humans.txt) to include the designer, dev and client names for the project
 
 ### <a name='html'>HTML & Liquid</a>
 
@@ -179,7 +179,7 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     </div><!-- end container -->
     ```
 
-- **Minimum DOM Size**: Keep the dom size to a minimum and don't use unnecessary elements
+- **Minimum DOM Size**: Keep the DOM size to a minimum and don't use unnecessary elements
 
     *Bad*
     ```html
@@ -199,7 +199,7 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     </div>
     ```
 
-    Avoid using foundation classes to hide/show mobile and desktop versions of similar elements. Instead use CSS to transform these elements so that they look good at any screen size. This is especially important for product displays as they are very heavy for both the server and customer viewing the site.
+    - Avoid using foundation classes to hide/show mobile and desktop versions of similar elements. Instead use CSS to transform these elements so that they look good at any screen size. This is especially important for product displays as they are very heavy for both the server and customer viewing the site.
 
     *Bad*
     ```html
@@ -237,7 +237,7 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     <img src="http://cdn2.crystalcommerce.com/themes/clients/MyClient/assets/myimage.jpg">
     ```
 
-    -Alt values: Static images require an alt value for accessability and SEO. The alt value should reflect the content of the image (assuming there is no text describing it nearby) and the action if applicable. If the image is purely decorative, use the CSS background-image property instead to remove it from the document.
+    - Alt values: Static images require an alt value for accessability and SEO. The alt value should reflect the content of the image (assuming there is no text describing it nearby) and the action if applicable. If the image is purely decorative, use the CSS background-image property instead to remove it from the document.
 
     *Bad*
     ```html
@@ -266,8 +266,14 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     }
     ```
 
-- **Form Fields**: Use `<label>` fields to label each form field. The for attribute should associate itself with the input field, so users can click the labels and obtain focus. Using the placeholder value is not adequate because it is often skipped by screen-readers
+- **Form Fields**: Use `<label>` fields to label each form field. The for attribute should associate itself with the input field, so users can click the labels and obtain focus. Using the placeholder value alone is not adequate because it is often skipped by screen-readers
+    
+    *Bad*
+    ```html
+    <input id="name" type="text" placeholder="Enter your name">
+    ```
 
+    *Good*
     ```html
     <label for="name">Your Name</label>
     <input id="name" type="text" placeholder="Enter your name">
@@ -291,7 +297,11 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
 
 ### <a name='css'>CSS</a>
 
-- **Formatting**: All CSS declarations should have a space after the propery colon and a trailing semi-colon. CSS properties should be alphabatized (use your best judgement if there are prefixes). Put a hard return after each selector's closing }. Do not nest rules with indentation.
+- **Formatting**: 
+    - All CSS declarations should have a space after the propery colon and a trailing semi-colon. 
+    - CSS properties should be alphabatized (use your best judgement if there are prefixes). 
+    - Put a hard return after each selector's closing }. 
+    - Do not nest rules with indentation.
 
     *Bad*
     ```CSS
@@ -301,14 +311,14 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
         border: 1px solid tomato;
         -webkit-border-radius: 5px;
         -moz-border-radius: 5px
-    }
+        }
         div a{
             padding: 1.5em;
         }
     ```
     *Good*
     ```CSS
-    .div{
+    div{
         border: 1px solid tomato;
         padding: 1em;
 
@@ -326,7 +336,9 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
 
     *Bad*
     ```html
-    <a href="/sign_up"><img src="{{ "button.jpg" | asset_url }}" alt="Go to sign up page"></a>
+    <a href="/sign_up">
+        <img src="{{ "button.jpg" | asset_url }}" alt="Go to sign up page">
+    </a>
     ```
 
     *Good*
@@ -342,8 +354,10 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     }
 
     .sign-up{
-        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(200,200,200,1)));
-        color: white;
+        background: -webkit-gradient(linear, left top, left bottom, 
+                    color-stop(0%,rgba(255,255,255,1)), 
+                    color-stop(100%,rgba(200,200,200,1)));
+                    color: white;
     }
     ```
 
@@ -363,7 +377,7 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     }
     ```
 
-    -Use responsive units whenever possible.
+    - Use responsive units whenever possible.
 
     *Bad*
     ```css
@@ -418,7 +432,7 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
 
     *Bad*
     ```css
-    .content .product-container > .product .inner .name + .price{
+    .content .product-container > .product .inner .name + .price {
         font-weight: bold;
     }
     ```
@@ -470,7 +484,7 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     }
     ```
 
-    -Sections of CSS should be labeled with a comment head that is prefixed with an underscore.
+    - Sections of CSS should be labeled with a comment head that is prefixed with an underscore.
 
     *Bad*
     ```css
@@ -507,6 +521,22 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     }
     ```
 
+- **Specify font fallbacks**
+    
+    *Bad*
+    ```css
+    p{
+        font-family: 'Lato';
+    }
+    ```
+
+    *Good*
+    ```css
+    p{
+        font-family: 'Lato', 'Helvetica', arial, sans-serif;
+    }
+    ```
+
 - **Positioning**: Use absolute and relative position sparingly.
 
     *Bad*
@@ -527,150 +557,150 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
 
 - **Semi-colons**
 
-*Bad*
-```Javascript
-(function() {
-  var name = 'Skywalker'
-  return name
-})()
-```
+    *Bad*
+    ```Javascript
+    (function() {
+      var name = 'Skywalker'
+      return name
+    })()
+    ```
 
-*Good*
-```Javascript
-(function() {
-  var name = 'Skywalker';
-  return name;
-})();
-```
+    *Good*
+    ```Javascript
+    (function() {
+      var name = 'Skywalker';
+      return name;
+    })();
+    ```
 
-*Even Better*
-```Javascript
-;(function() {
-  var name = 'Skywalker';
-  return name;
-})();
+    *Even Better*
+    ```Javascript
+    ;(function() {
+      var name = 'Skywalker';
+      return name;
+    })();
 ```
 
 - **Use single quotes for strings**
 
-*Bad*
-```Javascript
-var myString = "no double quotes \"without\" escapes <div class=\"gross\"></div>"
-```
+    *Bad*
+    ```Javascript
+    var myString = "no double quotes \"without\" escapes <div class=\"gross\"></div>"
+    ```
 
-*Good*
-```Javascript
-var myString = 'now we can "freely" use double quotes <div class="yay"></div>'
-```
+    *Good*
+    ```Javascript
+    var myString = 'now we can "freely" use double quotes <div class="yay"></div>'
+    ```
 
 - **Use braces for multi-line blocks**
 
-*Bad*
-```Javascript
-if (test)
-    return false;
-```
+    *Bad*
+    ```Javascript
+    if (test)
+        return false;
+    ```
 
-*Good*
-```Javascript
+    *Good*
+    ```Javascript
 
-if(test) return false;
+    if(test) return false;
 
-//or
+    //or
 
-if(test){
-    return false;
-}
+    if(test){
+        return false;
+    }
 ```
 
 - **Use `var` to declare variables with camelCase formatting**
 
-*Bad*
-```Javascript
-MYsupa_coolVAR = 'please no...';
-```
+    *Bad*
+    ```Javascript
+    MYsupa_coolVAR = 'please no...';
+    ```
 
-*Good*
-```Javascript
-var superCool = 'thank you...';
-```
+    *Good*
+    ```Javascript
+    var superCool = 'thank you...';
+    ```
 
--**Use evaluation shortcuts**
+    -**Use evaluation shortcuts**
 
-*Bad*
-```Javascript
-if (name !== ''){
-    // do this
-}
-```
+    *Bad*
+    ```Javascript
+    if (name !== ''){
+        // do this
+    }
+    ```
 
-*Good*
-```Javascript
-if (name){
-    // do this
-}
-```
+    *Good*
+    ```Javascript
+    if (name){
+        // do this
+    }
+    ```
 
--**Use literal syntax for object and array creation**
+- **Use literal syntax for object and array creation**
 
-*Bad*
-```Javascript
-var items = new Array();
+    *Bad*
+    ```Javascript
+    var items = new Array();
 
-var fruits = new Object();
-```
+    var fruits = new Object();
+    ```
 
-*Good*
-```Javascript
-var items = [];
+    *Good*
+    ```Javascript
+    var items = [];
 
-var fruits = {};
-```
+    var fruits = {};
+    ```
 
 - **Cache jQuery lookups**
 
-*Bad*
-```Javascript
-function setSidebar() {
-  $('.sidebar').hide();
+    *Bad*
+    ```Javascript
+    function setSidebar() {
+      $('.sidebar').hide();
 
-  // do this
+      // do this
 
-  $('.sidebar').css({
-    'background-color': 'pink'
-  });
-}
-```
+      $('.sidebar').css({
+        'background-color': 'pink'
+      });
+    }
+    ```
 
-*Good*
-```Javascript
-function setSidebar() {
-  var $sidebar = $('.sidebar');
-  $sidebar.hide();
+    *Good*
+    ```Javascript
+    function setSidebar() {
+      var $sidebar = $('.sidebar');
+      $sidebar.hide();
 
-  // do this
+      // do this
 
-  $sidebar.css({
-    'background-color': 'pink'
-  });
-}
-```
+      $sidebar.css({
+        'background-color': 'pink'
+      });
+    }
+    ```
 
-- **Scope jQuery lookups using find()**
+- **Scope jQuery lookups using `find()`**
 
-*Bad*
-```Javascript
-$('.active').on('click', function(){
-    // do this
-});
-```
+    *Bad*
+    ```Javascript
+    $('.active').on('click', function(){
+        // do this
+    });
+    ```
 
-*Good*
-```Javascript
-$('#header').find('.active').on('click', function(){
-   // do this 
-});
-```
+    *Good*
+    ```Javascript
+    $('#header').find('.active').on('click', function(){
+       // do this 
+    });
+    ```
 
 ### <a name='perf'>Perfomance</a>
 
@@ -704,8 +734,6 @@ Images:
     {% comment %} This minifies the CSS by setting it to false {% endcomment %}
     {{ "head" | css_minify_tag: false }}
     ```
-
-
 
 ### <a name='seo'>SEO & Data</a>
 
