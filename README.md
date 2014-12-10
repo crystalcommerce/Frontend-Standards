@@ -10,7 +10,7 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
   1. [HTML & Liquid](#html)
   1. [CSS](#css)
   1. [Javascript](#arrays)
-  1. [Performanace](#perf)
+  1. [Performance](#perf)
   1. [SEO & Data](#seo)
   1. [More Resources](#moreresources)
 
@@ -100,7 +100,7 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     ```
 
 - **Naming Conventions**
-    - Use object-oriented class names to build scalable and modular markup. Use hyphen sytanx sparingly. [You can read more about OOCSS at Smashing Magazine.](http://www.smashingmagazine.com/2011/12/12/an-introduction-to-object-oriented-css-oocss/)
+    - Use object-oriented class names to build scalable and modular markup. Use hyphen syntax sparingly. [You can read more about OOCSS at Smashing Magazine.](http://www.smashingmagazine.com/2011/12/12/an-introduction-to-object-oriented-css-oocss/)
 
     *Bad*
     ```html
@@ -228,7 +228,7 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
 
 - **Images**
     - Use the asset_url for including images and other assets
-    - `asset_url` returns asset path relative to the current theme’s asset dir on the cdn
+    - `asset_url` returns asset path relative to the current theme’s asset directory on the cdn
 
     *Bad*
     ```html
@@ -245,7 +245,7 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     <img src="http://cdn2.crystalcommerce.com/themes/clients/MyClient/assets/myimage.jpg">
     ```
 
-    - Alt values: Static images require an alt value for accessability and SEO. The alt value should reflect the content of the image (assuming there is no text describing it nearby) and the action if applicable. If the image is purely decorative, use the CSS `background-image` property instead to remove it from the document. [Read more about alt accessability at webaim.org.](http://webaim.org/techniques/alttext/)
+    - Alt values: Static images require an alt value for accessibility and SEO. The alt value should reflect the content of the image (assuming there is no text describing it nearby) and the action if applicable. If the image is purely decorative, use the CSS `background-image` property instead to remove it from the document. [Read more about alt accessibility at webaim.org.](http://webaim.org/techniques/alttext/)
 
     *Bad*
     ```html
@@ -308,8 +308,8 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
 ### <a name='css'>CSS</a>
 
 - **Formatting**: 
-    - All CSS declarations should have a space after the propery colon and a trailing semi-colon. 
-    - CSS properties should be alphabatized (use your best judgement if there are prefixes). 
+    - All CSS declarations should have a space after the property colon and a trailing semi-colon. 
+    - CSS properties should be alphabetized (use your best judgment if there are prefixes). 
     - Put a hard return after each selector's closing `}`. 
     - Do not nest rules with indentation.
 
@@ -388,7 +388,7 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
         margin: 0;
     }
     ```
-    
+
     - Use responsive units whenever possible.
 
     *Bad*
@@ -408,7 +408,7 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     ```
 
 - **IDs and Class names**
-    - The use of IDs is not allowed in CSS and should only be used for Javascript
+    - The use of IDs is not allowed in CSS and should only be used for Javascript.
 
     *Bad*
     ```css
@@ -443,7 +443,7 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     ```
 
 - **Selectors**
-    - CSS selectors should not exceed 3 levels deep. If they do, add a class to the element you are selecting. 
+    - CSS selectors should not exceed 3 levels deep. If they do, add a class to the element you are selecting. [Read why at csswizardry.com.](http://csswizardry.com/2012/05/keep-your-css-selectors-short/)
 
     *Bad*
     ```css
@@ -460,7 +460,7 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     ```
 
 - **Organization**
-    - Do not use multiple selector delcarations to write duplicate styles or to style the same element. 
+    - Do not use multiple selector declarations to write duplicate styles or to style the same element. 
 
     *Bad*
     ```html
@@ -469,12 +469,12 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
 
     ```css
     h4{
-        font-family: 'Helvetica', arial, sans-serif;
+        font-family: 'Helvetica', 'Arial', sans-serif;
     }
 
     p{
         color: tomato;
-        font-family: 'Helvetica', arial, sans-serif;
+        font-family: 'Helvetica', 'Arial', sans-serif;
     }
 
     [...]
@@ -491,7 +491,7 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
 
     ```css
     h4, p{
-        font-family: 'Helvetica', arial, sans-serif;
+        font-family: 'Helvetica', 'Arial', sans-serif;
     }
 
     p{
@@ -511,14 +511,16 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
 
     *Good*
     ```css
-    /*===== _HEADER ======
-    /*====================
+    /*===== _HEADER ======*/
+    /*====================*/
+
     header{
         background: tomato;
     }
     ```
 
 - **Use shorthand when available**
+    - Don't know what properties have available shorthand? [Dustian Diaz has a great article about them.](http://www.dustindiaz.com/css-shorthand/)
 
     *Bad*
     ```css
@@ -549,7 +551,7 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     *Good*
     ```css
     p{
-        font-family: 'Lato', 'Helvetica', arial, sans-serif;
+        font-family: 'Lato', 'Helvetica', 'Arial', sans-serif;
     }
     ```
 
@@ -596,7 +598,7 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
       var name = 'Skywalker';
       return name;
     })();
-```
+    ```
 
 - **Use single quotes for strings**
 
@@ -642,7 +644,7 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     var superCool = 'thank you...';
     ```
 
-    -**Use evaluation shortcuts**
+- **Use evaluation shortcuts**
 
     *Bad*
     ```Javascript
@@ -703,7 +705,8 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     }
     ```
 
-- **Scope jQuery lookups using `find()`**
+- **Scope jQuery lookups using `.find()`**
+    - [See why at jsperf](http://jsperf.com/jquery-find-vs-context-sel)
 
     *Bad*
     ```Javascript
@@ -722,24 +725,17 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
 - **More**
     - Standards for more advanced javascript and jQuery can be found [here](https://github.com/crystalcommerce/FrontendStandards/blob/master/JAVASCRIPT.md) (Work in progress)
 
-### <a name='perf'>Perfomance</a>
+### <a name='perf'>Performance</a>
 
+- **Images:**
+    - Font-awesome should be used in place of an image whenever possible.
+    - Image sprites should be used when CSS3 styles are not appropriate and called only once. [CSSTricks has a great article about using image sprites](http://css-tricks.com/css-sprites/), and [spritepad is a helpful tool for making them.](http://spritepad.wearekiss.com/)
+    - Use as few images as possible.
+    - PNGs should be optimized to reduce file size. [TinyPNG is a great tool for this.](https://tinypng.com/). They should also only be used when transparency is important. *Almost all slider images should be jpgs*.
 
-Images:
-- image sprites should be used when CSS3 styles are not appropriate
-- use as few images as possible
-- image sprites should be called only once - http://spritepad.wearekiss.com/
-- this should be near the top of your stylesheet
-- you can use a .sprite class to make this easier
-- use sprites for hover effects at all costs
 
 - **Google Fonts**
-    - You can include multiple Google Web Fonts with one `<link>` tag. This limits the amount of requests to their server to 1. <sup>[Refrence](https://developers.google.com/fonts/docs/getting_started#Syntax)</sup>
-
-    *Good*
-    ```html
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans|Roboto' rel='stylesheet' type='text/css'>
-    ```
+    - You can include multiple Google Web Fonts with one `<link>` tag. This limits the amount of requests to their server to 1. <sup>[Reference](https://developers.google.com/fonts/docs/getting_started#Syntax)</sup>
 
     *Bad*
     ```html
@@ -747,11 +743,17 @@ Images:
     <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     ```
 
+    *Good*
+    ```html
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans|Roboto' rel='stylesheet' type='text/css'>
+    ```
+
 - **Config.yml**
     - Use the `config.yml` to include CSS & JS
     - The config.yml will minify concatenate JS & CSS into fewer files.
     - [More info at docs.cc.com](http://docs.crystalcommerce.com/features/theme_config.html)
-
+    
+    *Good*
     ```html
     {% comment %} This minifies the CSS by setting it to false {% endcomment %}
     {{ "head" | css_minify_tag: false }}
@@ -795,6 +797,26 @@ Images:
         </a>
 
     </div>
+    ```
+
+- **Use text instead of images**
+
+    *Bad*
+    ```html
+    <img src="{{ "fancy_looking_store_name.jpg" | asset_url }} alt="CC's Cards and More!">
+    ```
+
+    *Good*
+    ```html
+    <div class="logotype">CC's Cards and More!</div>
+    ```
+
+    ```css
+    .logotype{
+        color: tomato;
+        font-weight: 2em;
+        font-family: 'Raleway', 'Helvetica', 'Arial', sans-serif;
+    }
     ```
 
 ### <a name='moreresources'>External Resources</a>
