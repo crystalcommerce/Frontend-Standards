@@ -67,6 +67,63 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
 
 - **Tables**: Tables should NOT be used for layout design. Use CSS.
 
+- **Naming Conventions**: Use object-oriented class names to build scalable and modular markup. Use hyphen sytanx sparingly. 
+
+    *Bad*
+    ```html
+    <div class="homePageProductContainer"></div>
+
+    <button class="checkout-button"></div>
+    <button class="signup-button"></div>
+    ```
+
+    ```css
+    .homePageProductContainer{
+        padding: 1rem;
+        color: tomato;
+    }
+
+    .checkout-button{
+        border-radius: 5px;
+        padding: 1rem;
+        color: tomato;
+    }
+
+    .signup-button{
+        border-radius: 5px;
+        padding: 1rem;
+        color: magenta;
+    }
+    ```
+
+    *Good*
+    ```html
+    <div class="product-container home"></div>
+
+    <button class="button checkout"></div>
+    <button class="button signup"></div>
+    ```
+
+    ```css
+    .product-container.home{
+        padding: 1rem;
+        color: tomato;
+    }
+
+    .button{
+        border-radius: 5px;
+        padding: 1rem;
+    }
+
+    .button.checkout{
+        color:tomato;
+    }
+
+    .button.signup{
+        color: magenta;
+    }
+    ```
+
 - **Comments**
     - Limit the use of rendered comments for production (js & css comments get removed/ minified)
     - don't use "end div" comments. Use the inspector and dev tools to debug html/ css
@@ -94,6 +151,7 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
 
     </div><!-- end container -->
     ```
+
 - **Minimum DOM Size**: Keep the dom size to a minimum and don't use unnecessary elements
 
     *Bad*
@@ -111,6 +169,26 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     ```html
     <div class="content">
         <p>This is better</p>
+    </div>
+    ```
+
+    Avoid using foundation classes to hide/show mobile and desktop versions of similar elements. Instead use CSS to transform these elements so that they look good at any screen size. This is especially important for product displays as they are very heavy for both the server and customer viewing the site.
+
+    *Bad*
+    ```html
+    <div class="list hide-for-small">
+        <!-- desktop advanced list -->
+    </div>
+
+    <div class="list show-for-medium-up">
+        <!-- mobile advanced list -->
+    </div>
+    ```
+
+    *Good*
+    ```html
+    <div class="list">
+        <!-- advanced list that looks good at all sizes -->
     </div>
     ```
 
@@ -217,20 +295,74 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     #page-container { background: #000 !important;}
     ```
 
-- **Selectors**: CSS selectors should not exceed 3 levels deep
-    - If a selector needs to exceed 3 levels, use sparingly
+- **Selectors**: CSS selectors should not exceed 3 levels deep. If they do, add a class to the element you are selecting. 
 
     *Bad*
     ```css
-    .content .product-container .product .inner .name {
+    .content .product-container > .product .inner .name + .price{
         font-weight: bold;
     }
     ```
 
     *Good*
     ```css
-    .product-container .product .name {
+    .product-container .price {
         font-weight: bold;
+    }
+    ```
+
+- **Organization**: Do not use multiple selector delcarations to write duplicate styles or to style the same element. 
+
+    *Bad*
+    ```html
+    <h4><p>My content<p></h4>
+    ```
+    ```css
+    h4{
+        font-family: 'Helvetica', arial, sans-serif;
+    }
+    p{
+        font-family: 'Helvetica', arial, sans-serif;
+        color: tomato;
+    }
+
+    [...]
+
+    p{
+        font-weight: bold;
+    }
+    ```
+
+    *Good*
+    ```html
+    <h4><p>My content<p></h4>
+    ```
+    ```css
+    h4, p{
+        font-family: 'Helvetica', arial, sans-serif;
+    }
+    p{
+        color: tomato;
+        font-weight: bold;
+    }
+    ```
+
+- **Use shorthand when available**
+
+    *Bad*
+    ```css
+    div{
+        margin-top: 1em;
+        margin-bottom: 2em;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    ```
+
+    *Good*
+    ```css
+    div{
+        margin: 1em auto 2em;
     }
     ```
 
