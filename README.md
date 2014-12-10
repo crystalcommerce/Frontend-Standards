@@ -42,30 +42,57 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
 
 - **HTML 5 Doctype**: Use the HTML 5 doctype at the top of your website
 
-    *Good*
-    ```html
-    <!DOCTYPE html>
-    ```
-
     *Bad*
     ```html
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     "http://w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
     ```
 
-- **HTML5 Markup**: Use HTML5 markup syntax
-
     *Good*
     ```html
-    <header><!-- my header --></header>
+    <!DOCTYPE html>
     ```
+
+- **HTML5 Markup**: Use HTML5 markup syntax
 
     *Bad*
     ```html
     <div class="header"><!-- old way to do headers --></div>
     ```
 
+    *Good*
+    ```html
+    <header><!-- my header --></header>
+    ```
+
 - **Tables**: Tables should NOT be used for layout design. Use CSS.
+
+    *Bad*
+    ```html
+    <tr class="nav">
+        <td>Nav item 1</td>
+        <td>Nav item 2</td>
+        <td>Nav item 3</td>
+    </tr>
+    ```
+
+    *Good*
+    ```html
+    <nav>
+        <ul>
+            <li>Nav item 1</li>
+            <li>Nav item 2</li>
+            <li>Nav item 3</li>
+        </ul>
+    </nav>
+    ```
+
+    ```css
+    nav li{
+        float: left;
+        list-style: none;
+    }
+    ```
 
 - **Naming Conventions**: Use object-oriented class names to build scalable and modular markup. Use hyphen sytanx sparingly. 
 
@@ -79,20 +106,20 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
 
     ```css
     .homePageProductContainer{
-        padding: 1rem;
         color: tomato;
+        padding: 1rem;
     }
 
     .checkout-button{
         border-radius: 5px;
-        padding: 1rem;
         color: tomato;
+        padding: 1rem;
     }
 
     .signup-button{
         border-radius: 5px;
-        padding: 1rem;
         color: magenta;
+        padding: 1rem;
     }
     ```
 
@@ -106,8 +133,8 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
 
     ```css
     .product-container.home{
-        padding: 1rem;
         color: tomato;
+        padding: 1rem;
     }
 
     .button{
@@ -116,7 +143,7 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     }
 
     .button.checkout{
-        color:tomato;
+        color: tomato;
     }
 
     .button.signup{
@@ -192,7 +219,7 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     </div>
     ```
 
-- **Asset URL**: Use the asset_url for including images and other assets
+- **Images**: Use the asset_url for including images and other assets
     - `asset_url` returns asset path relative to the current theme’s asset dir on the cdn
 
     *Bad*
@@ -210,13 +237,33 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     <img src="http://cdn2.crystalcommerce.com/themes/clients/MyClient/assets/myimage.jpg">
     ```
 
-- **Config.yml**: Use the `config.yml` to include CSS & JS
-    - The config.yml will minify concatenate JS & CSS into fewer files.
-    - [More info at docs.cc.com](http://docs.crystalcommerce.com/features/theme_config.html)
+    -Alt values: Static images require an alt value for accessability and SEO. The alt value should reflect the content of the image (assuming there is no text describing it nearby) and the action if applicable. If the image is purely decorative, use the CSS background-image property instead to remove it from the document.
 
+    *Bad*
     ```html
-    {% comment %} This minifies the CSS by setting it to false {% endcomment %}
-    {{ "head" | css_minify_tag: false }}
+    <a href="/george_washington" class="portrait">
+        <img src="{{ "president.jpg" | asset_url }}" alt="">
+    </a>
+
+    <img src="{{ "decorative-scroll.jpg" | asset_url }}" alt="">
+
+    <p>Everyone's favorite president</p>
+    ```
+
+    *Good*
+    ```html
+    <a href="/george_washington">
+        <img src="{{ "president.jpg" | asset_url }}" alt="A painting of George Washington. Click to learn more about him.">
+    </a>
+    
+    <p>Everyone's favorite president</p>
+    ```
+
+    ```css
+    .portrait::after{
+        background-image: url('assets/img/decorative-scroll.jpg');
+        content: '';
+    }
     ```
 
 - **Form Fields**: Use `<label>` fields to label each form field. The for attribute should associate itself with the input field, so users can click the labels and obtain focus. Using the placeholder value is not adequate because it is often skipped by screen-readers
@@ -244,11 +291,63 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
 
 ### <a name='css'>CSS</a>
 
-- CSS3 should be used over images, when applicable *(example, rounded corners, gradiants etc)*
-- **Custom CSS**: use `custom.global.css` for all your custom CSS
-- **Responsive CSS**: use `custom.devices.css` for your responsive CSS
-- All CSS rules should have a space after the selector colon and a trailing semi-colon.
-- 0 value requires no units
+- **Formatting**: All CSS declarations should have a space after the propery colon and a trailing semi-colon. CSS properties should be alphabatized (use your best judgement if there are prefixes). Put a hard return after each selector's closing }. Do not nest rules with indentation.
+
+    *Bad*
+    ```CSS
+    div{
+        padding:1em;
+        border-radius:5px;
+        border: 1px solid tomato;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px
+    }
+        div a{
+            padding: 1.5em;
+        }
+    ```
+    *Good*
+    ```CSS
+    .div{
+        border: 1px solid tomato;
+        padding: 1em;
+
+        border-radius: 5px;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+    }
+
+    div a{
+        padding: 1.5em;
+    }
+    ```
+
+- **CSS3 Over Images**: Use CSS3 properties whenever possible to avoid the usage of images. Check [can i use](http://caniuse.com/) for newer CSS properties (such as clip-mask) to ensure they are decently supported.
+
+    *Bad*
+    ```html
+    <a href="/sign_up"><img src="{{ "button.jpg" | asset_url }}" alt="Go to sign up page"></a>
+    ```
+
+    *Good*
+    ```html
+    <a href="/sign_up" class="button sign-up">Sign Up!</a>
+    ```
+
+    ```css
+    .button{
+        border-radius: 5px;
+        border: 1px solid black;
+        padding: 1rem;
+    }
+
+    .sign-up{
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(200,200,200,1)));
+        color: white;
+    }
+    ```
+
+- **Units**: 0 value requires no units
 
     *Bad*
     ```css
@@ -264,7 +363,25 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     }
     ```
 
-- **IDs and Class names**: the use of IDs is not allowed in CSS and should only be used for Javascript
+    -Use responsive units whenever possible.
+
+    *Bad*
+    ```css
+    .my-div{
+        font-size: 10pt;
+        width: 125px;
+    }
+    ```
+
+    *Good*
+    ```css
+    .my-div{
+        font-size: 1em;
+        width: 10%;
+    }
+    ```
+
+- **IDs and Class names**: The use of IDs is not allowed in CSS and should only be used for Javascript
 
     *Bad*
     ```css
@@ -276,8 +393,7 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     .my-div {background: blue;}
     ```
 
-
-- **CSS Hacks**: any CSS hacks should be written in `custom.shame.css` and should be well commented on why you are using the hack
+- **Hacks**: Any CSS hacks should be external from the main CSS document, and should be well commented on why you are using the hack
 
     *Bad*
     ```css
@@ -290,8 +406,11 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     ```css
     /* custom.shame.css */
 
-    /*  Page container gets overwritten by Javascript
-        so I need to overwrite it with !important   */
+    /*  
+    *    Style set with Javascript so I
+    *    need to overwrite it with !important   
+    */
+
     #page-container { background: #000 !important;}
     ```
 
@@ -317,13 +436,15 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     ```html
     <h4><p>My content<p></h4>
     ```
+
     ```css
     h4{
         font-family: 'Helvetica', arial, sans-serif;
     }
+
     p{
-        font-family: 'Helvetica', arial, sans-serif;
         color: tomato;
+        font-family: 'Helvetica', arial, sans-serif;
     }
 
     [...]
@@ -337,13 +458,33 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     ```html
     <h4><p>My content<p></h4>
     ```
+
     ```css
     h4, p{
         font-family: 'Helvetica', arial, sans-serif;
     }
+
     p{
         color: tomato;
         font-weight: bold;
+    }
+    ```
+
+    -Sections of CSS should be labeled with a comment head that is prefixed with an underscore.
+
+    *Bad*
+    ```css
+    header{
+        background: tomato;
+    }
+    ```
+
+    *Good*
+    ```css
+    /*===== _HEADER ======
+    /*====================
+    header{
+        background: tomato;
     }
     ```
 
@@ -352,10 +493,10 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     *Bad*
     ```css
     div{
-        margin-top: 1em;
         margin-bottom: 2em;
         margin-left: auto;
         margin-right: auto;
+        margin-top: 1em;
     }
     ```
 
@@ -366,21 +507,173 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     }
     ```
 
-*Work in progress*
+- **Positioning**: Use absolute and relative position sparingly.
 
-General:
-- use normalize.css if reset is not present
+    *Bad*
+    ```css
+    div{
+        position: relative;
+        top: 1em;
+    }
+    ```
+    *Good*
+    ```css
+    div{
+        margin-top: 1em;    
+    }
+    ```
 
-Presentation Considerations:
-- do not nest styles with indentation
-- group browser prefixes, separate with line breaks
-- w3c css3 spec should be listed last
-- css properties should be alphabetized
-- sections of css should labeled with a comment head
-- comment heads should be prefixed with an underscore i.e:
-- "_HEADER MAIN STYLES"
-- include table of contents (list of comment heads)
-- see example...
+### <a name='javascript'>Javascript</a>
+
+- **Semi-colons**
+
+*Bad*
+```Javascript
+(function() {
+  var name = 'Skywalker'
+  return name
+})()
+```
+
+*Good*
+```Javascript
+(function() {
+  var name = 'Skywalker';
+  return name;
+})();
+```
+
+*Even Better*
+```Javascript
+;(function() {
+  var name = 'Skywalker';
+  return name;
+})();
+```
+
+- **Use single quotes for strings**
+
+*Bad*
+```Javascript
+var myString = "no double quotes \"without\" escapes <div class=\"gross\"></div>"
+```
+
+*Good*
+```Javascript
+var myString = 'now we can "freely" use double quotes <div class="yay"></div>'
+```
+
+- **Use braces for multi-line blocks**
+
+*Bad*
+```Javascript
+if (test)
+    return false;
+```
+
+*Good*
+```Javascript
+
+if(test) return false;
+
+//or
+
+if(test){
+    return false;
+}
+```
+
+- **Use `var` to declare variables with camelCase formatting**
+
+*Bad*
+```Javascript
+MYsupa_coolVAR = 'please no...';
+```
+
+*Good*
+```Javascript
+var superCool = 'thank you...';
+```
+
+-**Use evaluation shortcuts**
+
+*Bad*
+```Javascript
+if (name !== ''){
+    // do this
+}
+```
+
+*Good*
+```Javascript
+if (name){
+    // do this
+}
+```
+
+-**Use literal syntax for object and array creation**
+
+*Bad*
+```Javascript
+var items = new Array();
+
+var fruits = new Object();
+```
+
+*Good*
+```Javascript
+var items = [];
+
+var fruits = {};
+```
+
+- **Cache jQuery lookups**
+
+*Bad*
+```Javascript
+function setSidebar() {
+  $('.sidebar').hide();
+
+  // do this
+
+  $('.sidebar').css({
+    'background-color': 'pink'
+  });
+}
+```
+
+*Good*
+```Javascript
+function setSidebar() {
+  var $sidebar = $('.sidebar');
+  $sidebar.hide();
+
+  // do this
+
+  $sidebar.css({
+    'background-color': 'pink'
+  });
+}
+```
+
+- **Scope jQuery lookups using find()**
+
+*Bad*
+```Javascript
+$('.active').on('click', function(){
+    // do this
+});
+```
+
+*Good*
+```Javascript
+$('#header').find('.active').on('click', function(){
+   // do this 
+});
+```
+
+### <a name='perf'>Perfomance</a>
+
 
 Images:
 - image sprites should be used when CSS3 styles are not appropriate
@@ -390,16 +683,6 @@ Images:
 - you can use a .sprite class to make this easier
 - use sprites for hover effects at all costs
 
-
-### <a name='javascript'>Javascript</a>
-
-*Work in progress*
-
-
-### <a name='perf'>Perfomance</a>
-
-- **HTTP Requests**: Minimize the amount of requests to the page by minifiying CSS & JS. You can have the server minify files with the use of config.yml
-- **non-blocking Javascript**: Make sure javascript is loaded at the bottom of the page and the page markup is rendered first. Javascript can block the page load causing a longer loading times.
 - **Google Fonts**: You can include multiple Google Web Fonts with one `<link>` tag. This limits the amount of requests to their server to 1. <sup>[Refrence](https://developers.google.com/fonts/docs/getting_started#Syntax)</sup>
 
     *Good*
@@ -413,8 +696,15 @@ Images:
     <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     ```
 
+- **Config.yml**: Use the `config.yml` to include CSS & JS
+    - The config.yml will minify concatenate JS & CSS into fewer files.
+    - [More info at docs.cc.com](http://docs.crystalcommerce.com/features/theme_config.html)
 
-- ......
+    ```html
+    {% comment %} This minifies the CSS by setting it to false {% endcomment %}
+    {{ "head" | css_minify_tag: false }}
+    ```
+
 
 
 ### <a name='seo'>SEO & Data</a>
