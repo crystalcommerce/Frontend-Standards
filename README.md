@@ -16,7 +16,8 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
 
 ### <a name='general'>General</a>
 
-- **Spaces not Tabs**: Use spaces when coding and not tab characters. Use 4 spaces for a tab.
+- **Spaces not Tabs**
+    - Use spaces when coding and not tab characters. Use 4 spaces for a tab.
 
     *Good*
     ```html
@@ -32,15 +33,17 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     </div>
     ```
     
-  In Sublime Text you can see tabs vs spaces if you highlight the code area
+    - In Sublime Text you can see tabs vs spaces if you highlight the code area
   
-  ![Imgur](http://i.imgur.com/w78CPQb.png)
+    ![Imgur](http://i.imgur.com/w78CPQb.png)
 
-- **Attribution** Edit [humans.txt](https://github.com/crystalcommerce/Heisenberg/blob/master/humans.txt) to include the designer, dev and client names for the project
+- **Attribution**
+    - Edit [humans.txt](https://github.com/crystalcommerce/Heisenberg/blob/master/humans.txt) to include the designer, dev and client names for the project. [Read about the robots.txt initiative.](http://humanstxt.org/)
 
 ### <a name='html'>HTML & Liquid</a>
 
-- **HTML 5 Doctype**: Use the HTML 5 doctype at the top of your website
+- **HTML 5 Doctype**
+    - Use the HTML 5 doctype at the top of your website
 
     *Bad*
     ```html
@@ -53,7 +56,8 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     <!DOCTYPE html>
     ```
 
-- **HTML5 Markup**: Use HTML5 markup syntax
+- **HTML5 Markup**
+    - Use HTML5 markup syntax
 
     *Bad*
     ```html
@@ -65,7 +69,8 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     <header><!-- my header --></header>
     ```
 
-- **Tables**: Tables should NOT be used for layout design. Use CSS.
+- **Tables**
+    - Tables should NOT be used for layout design. Use CSS.
 
     *Bad*
     ```html
@@ -94,7 +99,8 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     }
     ```
 
-- **Naming Conventions**: Use object-oriented class names to build scalable and modular markup. Use hyphen sytanx sparingly. 
+- **Naming Conventions**
+    - Use object-oriented class names to build scalable and modular markup. Use hyphen sytanx sparingly. [You can read more about OOCSS at Smashing Magazine.](http://www.smashingmagazine.com/2011/12/12/an-introduction-to-object-oriented-css-oocss/)
 
     *Bad*
     ```html
@@ -153,8 +159,8 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
 
 - **Comments**
     - Limit the use of rendered comments for production (js & css comments get removed/ minified)
-    - don't use "end div" comments. Use the inspector and dev tools to debug html/ css
-    - comments should be implemented with liquid syntax
+    - Don't use "end div" comments. Use the inspector and dev tools to debug html/ css
+    - Comments should be implemented with liquid syntax
     - Use liquid comments instead of HTML comments when possible
 
     *Good*
@@ -179,7 +185,8 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     </div><!-- end container -->
     ```
 
-- **Minimum DOM Size**: Keep the DOM size to a minimum and don't use unnecessary elements
+- **Minimum DOM Size**
+    - Keep the DOM size to a minimum and don't use unnecessary elements
 
     *Bad*
     ```html
@@ -219,7 +226,8 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     </div>
     ```
 
-- **Images**: Use the asset_url for including images and other assets
+- **Images**
+    - Use the asset_url for including images and other assets
     - `asset_url` returns asset path relative to the current theme’s asset dir on the cdn
 
     *Bad*
@@ -237,7 +245,7 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     <img src="http://cdn2.crystalcommerce.com/themes/clients/MyClient/assets/myimage.jpg">
     ```
 
-    - Alt values: Static images require an alt value for accessability and SEO. The alt value should reflect the content of the image (assuming there is no text describing it nearby) and the action if applicable. If the image is purely decorative, use the CSS background-image property instead to remove it from the document.
+    - Alt values: Static images require an alt value for accessability and SEO. The alt value should reflect the content of the image (assuming there is no text describing it nearby) and the action if applicable. If the image is purely decorative, use the CSS `background-image` property instead to remove it from the document. [Read more about alt accessability at webaim.org.](http://webaim.org/techniques/alttext/)
 
     *Bad*
     ```html
@@ -266,7 +274,8 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     }
     ```
 
-- **Form Fields**: Use `<label>` fields to label each form field. The for attribute should associate itself with the input field, so users can click the labels and obtain focus. Using the placeholder value alone is not adequate because it is often skipped by screen-readers
+- **Form Fields**
+    - Use `<label>` fields to label each form field. The for attribute should associate itself with the input field, so users can click the labels and obtain focus. Using the placeholder value alone is not adequate because it is often skipped by screen-readers. [Read more about accessible web forms at webaim.org](http://webaim.org/techniques/forms/controls)
     
     *Bad*
     ```html
@@ -279,7 +288,8 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     <input id="name" type="text" placeholder="Enter your name">
     ```
 
-- **Liquid Logic**: Avoid long liquid statements that have lots of operators. Simplify your statements using available tools such as `{% assign %}`, `{% for %}`, `{% unless %}`, and `{% != %}'`.
+- **Liquid Logic**
+    - Avoid long liquid statements that have lots of operators. Simplify your statements using available tools such as `{% assign %}`, `{% for %}`, `{% unless %}`, and `{% != %}'`.
 
     *Bad*
     ```html
@@ -300,7 +310,7 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
 - **Formatting**: 
     - All CSS declarations should have a space after the propery colon and a trailing semi-colon. 
     - CSS properties should be alphabatized (use your best judgement if there are prefixes). 
-    - Put a hard return after each selector's closing }. 
+    - Put a hard return after each selector's closing `}`. 
     - Do not nest rules with indentation.
 
     *Bad*
@@ -332,7 +342,8 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     }
     ```
 
-- **CSS3 Over Images**: Use CSS3 properties whenever possible to avoid the usage of images. Check [can i use](http://caniuse.com/) for newer CSS properties (such as clip-mask) to ensure they are decently supported.
+- **CSS3 Over Images**
+    - Use CSS3 properties whenever possible to avoid the usage of images. Check [can I use](http://caniuse.com/) for newer CSS properties (such as clip-mask) to ensure they are decently supported.
 
     *Bad*
     ```html
@@ -361,7 +372,8 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     }
     ```
 
-- **Units**: 0 value requires no units
+- **Units**: 
+    - 0 value requires no units.
 
     *Bad*
     ```css
@@ -376,7 +388,7 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
         margin: 0;
     }
     ```
-
+    
     - Use responsive units whenever possible.
 
     *Bad*
@@ -395,7 +407,8 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     }
     ```
 
-- **IDs and Class names**: The use of IDs is not allowed in CSS and should only be used for Javascript
+- **IDs and Class names**
+    - The use of IDs is not allowed in CSS and should only be used for Javascript
 
     *Bad*
     ```css
@@ -407,7 +420,8 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     .my-div {background: blue;}
     ```
 
-- **Hacks**: Any CSS hacks should be external from the main CSS document, and should be well commented on why you are using the hack
+- **Hacks**
+    - Any CSS hacks should be external from the main CSS document, and should be well commented on why you are using the hack
 
     *Bad*
     ```css
@@ -428,7 +442,8 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     #page-container { background: #000 !important;}
     ```
 
-- **Selectors**: CSS selectors should not exceed 3 levels deep. If they do, add a class to the element you are selecting. 
+- **Selectors**
+    - CSS selectors should not exceed 3 levels deep. If they do, add a class to the element you are selecting. 
 
     *Bad*
     ```css
@@ -444,7 +459,8 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     }
     ```
 
-- **Organization**: Do not use multiple selector delcarations to write duplicate styles or to style the same element. 
+- **Organization**
+    - Do not use multiple selector delcarations to write duplicate styles or to style the same element. 
 
     *Bad*
     ```html
@@ -537,7 +553,8 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     }
     ```
 
-- **Positioning**: Use absolute and relative position sparingly.
+- **Positioning**
+    - Use absolute and relative position sparingly.
 
     *Bad*
     ```css
@@ -553,7 +570,7 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     }
     ```
 
-### <a name='javascript'>Javascript</a>
+### <a name='javascript'>Javascript</a> 
 
 - **Semi-colons**
 
@@ -611,7 +628,7 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     if(test){
         return false;
     }
-```
+    ```
 
 - **Use `var` to declare variables with camelCase formatting**
 
@@ -702,6 +719,9 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     });
     ```
 
+- **More**
+    - Standards for more advanced javascript and jQuery can be found [here](https://github.com/crystalcommerce/FrontendStandards/blob/master/JAVASCRIPT.md) (Work in progress)
+
 ### <a name='perf'>Perfomance</a>
 
 
@@ -713,7 +733,8 @@ Images:
 - you can use a .sprite class to make this easier
 - use sprites for hover effects at all costs
 
-- **Google Fonts**: You can include multiple Google Web Fonts with one `<link>` tag. This limits the amount of requests to their server to 1. <sup>[Refrence](https://developers.google.com/fonts/docs/getting_started#Syntax)</sup>
+- **Google Fonts**
+    - You can include multiple Google Web Fonts with one `<link>` tag. This limits the amount of requests to their server to 1. <sup>[Refrence](https://developers.google.com/fonts/docs/getting_started#Syntax)</sup>
 
     *Good*
     ```html
@@ -726,7 +747,8 @@ Images:
     <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     ```
 
-- **Config.yml**: Use the `config.yml` to include CSS & JS
+- **Config.yml**
+    - Use the `config.yml` to include CSS & JS
     - The config.yml will minify concatenate JS & CSS into fewer files.
     - [More info at docs.cc.com](http://docs.crystalcommerce.com/features/theme_config.html)
 
@@ -737,7 +759,8 @@ Images:
 
 ### <a name='seo'>SEO & Data</a>
 
-- **Schema Data**: Use schema data when applicable. You can test the data with [Google's Structured Data Testing Tool](http://www.google.com/webmasters/tools/richsnippets). More info at [Schema.org](http://schema.org)
+- **Schema Data**
+    - Use schema data when applicable. You can test the data with [Google's Structured Data Testing Tool](http://www.google.com/webmasters/tools/richsnippets). More info at [Schema.org](http://schema.org)
   - [Schema Product Data](http://schema.org/Product)
   - [Schema Organization Data](http://schema.org/Organization)
 
