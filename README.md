@@ -17,17 +17,17 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
 - **Spaces not Tabs**
     - Use spaces when coding and not tab characters. Use 4 spaces for a tab.
 
-    *Good*
-    ```html
-    <div class="container">
-        <p>This is my text</p>
-    </div>
-    ```
-
     *Bad*
     ```html
     <div class="container">
       <p>This is my text</p>
+    </div>
+    ```
+
+    *Good*
+    ```html
+    <div class="container">
+        <p>This is my text</p>
     </div>
     ```
     
