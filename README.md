@@ -369,6 +369,25 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
                     color: white;
     }
     ```
+- **Magic Numbers**: 
+    - Avoid 'magic numbers' in CSS. <sup>[Refrence](http://css-tricks.com/magic-numbers-in-css/)</sup>
+    
+	*Bad*
+    ```css
+	.site-nav > li:hover .dropdown{
+	  position: absolute;
+	  top: 37px;
+	  left: 0;
+	}
+    ```
+	*Good*
+    ```css
+	.site-nav > li:hover .dropdown{
+	  position: absolute;
+	  top: 100%;
+	  left: 0;
+	}
+    ```
 
 - **Units**: 
     - 0 value requires no units.
@@ -388,20 +407,22 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     ```
 
     - Use responsive units whenever possible.
-
-    *Bad*
-    ```css
-    .my-div{
-        font-size: 10pt;
-        width: 125px;
-    }
-    ```
+    - Use `rem` for font-size and `em` for media queries. 
+    - `rem` is not supported in older browsers with media queriers. <sup>[Refrence](https://bugs.webkit.org/show_bug.cgi?id=78295)</sup>
+    - `rem` = Size relative to the body element font-size.
+    - `em` = Size relative the parent element font-size.
 
     *Good*
     ```css
     .my-div{
-        font-size: 1em;
+        font-size: 1rem;
         width: 10%;
+    }
+    ```
+	*Bad*
+    ```css
+    .my-div{
+        font-size: 16px;
     }
     ```
 
@@ -569,26 +590,7 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
         margin-top: 1em;    
     }
     ```
-    
-- **rem and em**
-    - Use `rem` for font-size and `em` for media queries. 
-    - `rem` is not supported in older browsers with media queriers. <sup>[Refrence](https://bugs.webkit.org/show_bug.cgi?id=78295)</sup>
-    - `rem` = Size relative to the body element font-size
-    - `em` = Size relative the parent element font-size
-
-    *Bad*
-    ```css
-    div{
-        position: relative;
-        top: 1em;
-    }
-    ```
-    *Good*
-    ```css
-    div{
-        margin-top: 1em;    
-    }
-    ```
+ 
     
     
 
