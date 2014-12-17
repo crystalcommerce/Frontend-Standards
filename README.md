@@ -371,6 +371,7 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     ```
 - **Magic Numbers**: 
     - Avoid 'magic numbers' in CSS. <sup>[Refrence](http://css-tricks.com/magic-numbers-in-css/)</sup>
+    - "Magic numbers in CSS refer to values which "work" under some circumstances but are frail and prone to break when those circumstances change. They are usually always related to fonts in some way or another. "
     
 	*Bad*
     ```css
