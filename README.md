@@ -569,6 +569,28 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
         margin-top: 1em;    
     }
     ```
+    
+- **rem and em**
+    - Use `rem` for font-size and `em` for media queries. 
+    - `rem` is not supported in older browsers with media queriers. <sup>[Refrence](https://bugs.webkit.org/show_bug.cgi?id=78295)</sup>
+    - `rem` = Size relative to the body element font-size
+    - `em` = Size relative the parent element font-size
+
+    *Bad*
+    ```css
+    div{
+        position: relative;
+        top: 1em;
+    }
+    ```
+    *Good*
+    ```css
+    div{
+        margin-top: 1em;    
+    }
+    ```
+    
+    
 
 ### <a name='javascript'>Javascript</a> 
 
