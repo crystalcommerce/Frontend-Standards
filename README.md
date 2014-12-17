@@ -409,7 +409,7 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
 
     - Use responsive units whenever possible.
     - Use `rem` for font-size and `em` for media queries. 
-    - `rem` is not supported in older browsers with media queriers. <sup>[Refrence](https://bugs.webkit.org/show_bug.cgi?id=78295)</sup>
+    - `rem` is not supported in older browsers with media queries. <sup>[Refrence](https://bugs.webkit.org/show_bug.cgi?id=78295)</sup>
     - `rem` = Size relative to the body element font-size.
     - `em` = Size relative the parent element font-size.
 
