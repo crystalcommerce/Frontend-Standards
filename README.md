@@ -91,7 +91,7 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     ```
 
     ```css
-    nav li{
+    nav li {
         float: left;
         list-style: none;
     }
@@ -109,18 +109,18 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     ```
 
     ```css
-    .homePageProductContainer{
+    .homePageProductContainer {
         color: tomato;
         padding: 1rem;
     }
 
-    .checkout-button{
+    .checkout-button {
         border-radius: 5px;
         color: tomato;
         padding: 1rem;
     }
 
-    .signup-button{
+    .signup-button {
         border-radius: 5px;
         color: magenta;
         padding: 1rem;
@@ -136,17 +136,17 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     ```
 
     ```css
-    .product-container.home{
+    .product-container.home {
         color: tomato;
         padding: 1rem;
     }
 
-    .button{
+    .button {
         border-radius: 5px;
         padding: 1rem;
     }
 
-    .button.checkout{
+    .button.checkout {
         color: tomato;
     }
 
@@ -266,7 +266,7 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     ```
 
     ```css
-    .portrait::after{
+    .portrait::after {
         background-image: url('assets/img/decorative-scroll.jpg');
         content: '';
     }
@@ -309,6 +309,7 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     - All CSS declarations should have a space after the property colon and a trailing semi-colon. 
     - CSS properties should be alphabetized (use your best judgment if there are prefixes). 
     - Put a hard return after each selector's closing `}`. 
+    - Put a space between the descriptor and the opening `{`.
     - Do not nest rules with indentation.
 
     *Bad*
@@ -326,7 +327,7 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     ```
     *Good*
     ```CSS
-    div{
+    div {
         border: 1px solid tomato;
         padding: 1em;
 
@@ -335,7 +336,7 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
         -webkit-border-radius: 5px;
     }
 
-    div a{
+    div a {
         padding: 1.5em;
     }
     ```
@@ -356,7 +357,7 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     ```
 
     ```css
-    .button{
+    .button {
         border-radius: 5px;
         border: 1px solid black;
         padding: 1rem;
@@ -375,7 +376,7 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     
 	*Bad*
     ```css
-	.site-nav > li:hover .dropdown{
+	.site-nav > li:hover .dropdown {
 	  position: absolute;
 	  top: 37px;
 	  left: 0;
@@ -383,7 +384,7 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     ```
 	*Good*
     ```css
-	.site-nav > li:hover .dropdown{
+	.site-nav > li:hover .dropdown {
 	  position: absolute;
 	  top: 100%;
 	  left: 0;
@@ -415,14 +416,14 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
 
     *Good*
     ```css
-    .my-div{
+    .my-div {
         font-size: 1rem;
         width: 10%;
     }
     ```
 	*Bad*
     ```css
-    .my-div{
+    .my-div {
         font-size: 16px;
     }
     ```
@@ -488,18 +489,18 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     ```
 
     ```css
-    h4{
+    h4 {
         font-family: 'Helvetica', 'Arial', sans-serif;
     }
 
-    p{
+    p {
         color: tomato;
         font-family: 'Helvetica', 'Arial', sans-serif;
     }
 
     [...]
 
-    p{
+    p {
         font-weight: bold;
     }
     ```
@@ -510,11 +511,11 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     ```
 
     ```css
-    h4, p{
+    h4, p {
         font-family: 'Helvetica', 'Arial', sans-serif;
     }
 
-    p{
+    p {
         color: tomato;
         font-weight: bold;
     }
@@ -524,7 +525,7 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
 
     *Bad*
     ```css
-    header{
+    header {
         background: tomato;
     }
     ```
@@ -534,7 +535,7 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     /*===== _HEADER ======*/
     /*====================*/
 
-    header{
+    header {
         background: tomato;
     }
     ```
@@ -544,7 +545,7 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
 
     *Bad*
     ```css
-    div{
+    div {
         margin-bottom: 2em;
         margin-left: auto;
         margin-right: auto;
@@ -554,7 +555,7 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
 
     *Good*
     ```css
-    div{
+    div {
         margin: 1em auto 2em;
     }
     ```
@@ -563,14 +564,14 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     
     *Bad*
     ```css
-    p{
+    p {
         font-family: 'Lato';
     }
     ```
 
     *Good*
     ```css
-    p{
+    p {
         font-family: 'Lato', 'Helvetica', 'Arial', sans-serif;
     }
     ```
@@ -580,14 +581,14 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
 
     *Bad*
     ```css
-    div{
+    div {
         position: relative;
         top: 1em;
     }
     ```
     *Good*
     ```css
-    div{
+    div {
         margin-top: 1em;    
     }
     ```
@@ -835,7 +836,7 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     ```
 
     ```css
-    .logotype{
+    .logotype {
         color: tomato;
         font-weight: 2em;
         font-family: 'Raleway', 'Helvetica', 'Arial', sans-serif;
