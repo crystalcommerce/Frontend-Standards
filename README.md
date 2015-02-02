@@ -593,8 +593,9 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     }
     ```
  
- - **SASS*** - Use a blank line above selector that has styles. Use a blank line after a selector.
- 
+ - **SASS** - Use the SCSS format.
+ - **SASS** - Use a blank line above selector that has styles. Use a blank line after a selector.
+
  ```css
  .news {
      width: 100%;
@@ -607,7 +608,7 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
             font-size: 1.4rem;
          }
       
-    }
+      }
     
   }
   ```
