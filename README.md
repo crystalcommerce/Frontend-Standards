@@ -593,7 +593,24 @@ These standards and guidelines are mainly for CrystalCommerce front-end client p
     }
     ```
  
+ - **SASS*** - Use a blank line above selector that has styles. Use a blank line after a selector.
+ 
+ ```css
+ .news {
+     width: 100%;
+
+     article {
+         border: 1px solid red;
+         background: #fff;
+      
+         p {
+            font-size: 1.4rem;
+         }
+      
+    }
     
+  }
+  ```
     
 
 ### <a name='javascript'>Javascript</a> 
